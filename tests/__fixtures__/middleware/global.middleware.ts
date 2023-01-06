@@ -1,1 +1,1 @@
-export { default } from '../../../src/Parameters.universal-express-controllers-middleware'
+export { default } from '../../../src/Parameters.universal-express-middleware'
