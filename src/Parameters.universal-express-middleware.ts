@@ -3,7 +3,7 @@ import { injectParameters } from '@universal-packages/express-parameters'
 import { CURRENT_OPTIONS } from './express-controllers-parameters'
 
 @Middleware()
-export default class EachMiddleware extends BaseMiddleware {
+export default class ParametersMiddleware extends BaseMiddleware {
   public static readonly strategy: MiddlewareStrategy = 'each'
 
   public async middleware(): Promise<void> {

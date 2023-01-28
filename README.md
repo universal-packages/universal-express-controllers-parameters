@@ -1,10 +1,10 @@
 # Express controllers parameters
 
-[![npm version](https://badge.fury.io/js/@universal-packages%2Fexpress-parameters.svg)](https://www.npmjs.com/package/@universal-packages/express-controllers-parameters)
+[![npm version](https://badge.fury.io/js/@universal-packages%2Fexpress-controllers-parameters.svg)](https://www.npmjs.com/package/@universal-packages/express-controllers-parameters)
 [![Testing](https://github.com/universal-packages/universal-express-controllers-parameters/actions/workflows/testing.yml/badge.svg)](https://github.com/universal-packages/universal-express-controllers-parameters/actions/workflows/testing.yml)
 [![codecov](https://codecov.io/gh/universal-packages/universal-express-controllers-parameters/branch/main/graph/badge.svg?token=CXPJSN8IGL)](https://codecov.io/gh/universal-packages/universal-express-controllers-parameters)
 
-Express parameters for controllers.
+Express parameters for universal controllers.
 
 ## Install
 

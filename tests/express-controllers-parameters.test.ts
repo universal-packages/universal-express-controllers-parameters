@@ -9,7 +9,7 @@ afterEach(async (): Promise<void> => {
   await app.stop()
 })
 
-describe('express-controller', (): void => {
+describe('express-controllers-parameters', (): void => {
   it('It executed configured middleware all across controllers', async (): Promise<void> => {
     app = new ExpressApp({ appLocation: './tests/__fixtures__', port })
     await app.prepare()
