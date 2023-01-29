@@ -13,9 +13,11 @@
     "test:full": "jest --coverage --verbose",
     "test:clear": "jest --clearCache"
   },
+  "dependencies": {
+    "@universal-packages/express-parameters": "^1.1.3"
+  },
   "peerDependencies": {
     "@universal-packages/express-controllers": "^1.6.2",
-    "@universal-packages/express-parameters": "^1.1.3",
     "express": "^4.18.2"
   },
   "devDependencies": {

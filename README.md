@@ -13,7 +13,6 @@ npm install @universal-packages/express-controllers-parameters
 
 npm install express
 npm install @universal-packages/express-controllers
-npm install @universal-packages/express-parameters
 ```
 
 ## Global middleware
