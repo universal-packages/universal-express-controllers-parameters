@@ -19,7 +19,8 @@ npm install @universal-packages/express-controllers
 
 By installing this package a global middleware is going to be loaded automatically by the `ExpressApp`.
 
-### setUnionKind()
+## Global methods
+#### **`setUnionKind(unionKind: string)`**
 
 Set up the global middleware parameters union kind by calling this function at any given moment.
 
@@ -29,7 +30,8 @@ import { setUnionKind } from '@universal-packages/express-controllers-parameters
 setUnionKind('join')
 ```
 
-## @UseParameters
+## Hooks
+#### **`@UseParameters([unionKind: string])`**
 
 Optionally you can set a different strategy for a particular action using this decorator.
 
