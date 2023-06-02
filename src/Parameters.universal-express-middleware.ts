@@ -1,5 +1,6 @@
 import { BaseMiddleware, Middleware, MiddlewareStrategy } from '@universal-packages/express-controllers'
 import { injectParameters } from '@universal-packages/express-parameters'
+
 import { CURRENT_OPTIONS } from './express-controllers-parameters'
 
 @Middleware()
