@@ -2,7 +2,7 @@ import { BaseController, Controller, Get, Post } from '@universal-packages/expre
 
 import { UseParameters } from '../../src'
 
-@Controller('good')
+@Controller('good', { bodyParser: 'json' })
 export default class GoodController extends BaseController {
   @Get(':id')
   @UseParameters('separate')
