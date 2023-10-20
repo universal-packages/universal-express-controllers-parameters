@@ -1,5 +1,4 @@
 import { ExpressApp } from '@universal-packages/express-controllers'
-import fetch from 'node-fetch'
 
 import { setUnionKind } from '../src'
 
@@ -13,31 +12,24 @@ afterEach(async (): Promise<void> => {
 describe('express-controllers-parameters', (): void => {
   it('It executed configured middleware all across controllers', async (): Promise<void> => {
     app = new ExpressApp({ appLocation: './tests/__fixtures__', port })
+    app.on('request/error', console.log)
     await app.prepare()
     await app.run()
 
     app.on('request/error', console.log)
 
-    let response = await fetch(`http://localhost:${port}/good/1`)
-    expect(response.status).toBe(200)
-    expect(await response.json()).toEqual({ subject: { body: {}, params: { id: '1' }, query: {} } })
+    await fGet('/good/1')
+    expect(fResponse).toHaveReturnedWithStatus('OK')
+    expect(fResponseBody).toEqual({ subject: { body: {}, params: { id: '1' }, query: {} } })
 
-    response = await fetch(`http://localhost:${port}/good/1`, {
-      method: 'POST',
-      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify({ part: 1 })
-    })
-    expect(response.status).toBe(200)
-    expect(await response.json()).toEqual({ subject: { part: 1 } })
+    await fPost('/good/1', { part: 1 })
+    expect(fResponse).toHaveReturnedWithStatus('OK')
+    expect(fResponseBody).toEqual({ subject: { part: 1 } })
 
     setUnionKind('separate')
 
-    response = await fetch(`http://localhost:${port}/good/2`, {
-      method: 'POST',
-      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify({ part: 1 })
-    })
-    expect(response.status).toBe(200)
-    expect(await response.json()).toEqual({ subject: { body: { part: 1 }, params: { id: '2' }, query: {} } })
+    await fPost('/good/2', { part: 1 })
+    expect(fResponse).toHaveReturnedWithStatus('OK')
+    expect(fResponseBody).toEqual({ subject: { body: { part: 1 }, params: { id: '2' }, query: {} } })
   })
 })
