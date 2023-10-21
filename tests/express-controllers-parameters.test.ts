@@ -1,22 +1,8 @@
-import { ExpressApp } from '@universal-packages/express-controllers'
-
 import { setUnionKind } from '../src'
-
-const port = 4000 + Number(process.env['JEST_WORKER_ID'])
-
-let app: ExpressApp
-afterEach(async (): Promise<void> => {
-  await app.stop()
-})
 
 describe('express-controllers-parameters', (): void => {
   it('It executed configured middleware all across controllers', async (): Promise<void> => {
-    app = new ExpressApp({ appLocation: './tests/__fixtures__', port })
-    app.on('request/error', console.log)
-    await app.prepare()
-    await app.run()
-
-    app.on('request/error', console.log)
+    await runExpressApp()
 
     await fGet('/good/1')
     expect(fResponse).toHaveReturnedWithStatus('OK')
