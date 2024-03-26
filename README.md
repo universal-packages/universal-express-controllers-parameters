@@ -17,7 +17,7 @@ npm install @universal-packages/express-controllers
 
 ## Global middleware
 
-By installing this package a global middleware is going to be loaded automatically by the `ExpressApp`.
+By installing this package a global middleware is going to be loaded automatically by the `ExpressControllers`.
 
 ## Global methods
 #### **`setUnionKind(unionKind: string)`**

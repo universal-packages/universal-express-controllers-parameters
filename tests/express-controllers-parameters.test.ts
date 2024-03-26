@@ -2,7 +2,7 @@ import { setUnionKind } from '../src'
 
 describe('express-controllers-parameters', (): void => {
   it('It executed configured middleware all across controllers', async (): Promise<void> => {
-    await runExpressApp()
+    await runExpressControllers()
 
     await fGet('/good/1')
     expect(fResponse).toHaveReturnedWithStatus('OK')
